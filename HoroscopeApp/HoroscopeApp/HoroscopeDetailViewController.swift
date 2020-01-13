@@ -14,25 +14,43 @@ class HoroscopeDetailViewController: UITableViewController {
     @IBOutlet weak var horoscopePicker: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    // data for our picker view - ask how we could populate in from API
+    private let horoscopes = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
+
+    // labName will be the current selected row in the picker view
+    private var signName: String?
+    
+    //var horoscope: Horoscope?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // we have to configure the picker view
+        horoscopePicker.dataSource = self
+        horoscopePicker.delegate = self
+        
+        //horoscope?.sunsign.first
+       signName = horoscopes.first
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    
-    
-
 }
+
+extension HoroscopeDetailViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return horoscopes.count
+        //return horoscope?.sunsign.count ?? 1
+    }
+}
+
+extension HoroscopeDetailViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return horoscopes[row]
+    }
+}
+
