@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var settingButtonLabel: UIButton!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var horoscopeSignLable: UILabel!
-    @IBOutlet weak var horoscopeDescriptionLabel: UITextView!
+    @IBOutlet weak var horoscopeDescriptionTextView: UITextView!
     
     var passingName = "" {
         didSet{
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     var passingSignDescription = "" {
         didSet{
             DispatchQueue.main.async {
-                self.horoscopeDescriptionLabel.text = self.passingSignDescription
+                self.horoscopeDescriptionTextView.text = self.passingSignDescription
             }
         }
     }
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
                 print("error \(appError)")
             case .success(let gotHoroscope):
                 DispatchQueue.main.async {
-                    self?.horoscopeDescriptionLabel.text = gotHoroscope.horoscope
+                    self?.horoscopeDescriptionTextView.text = gotHoroscope.horoscope
                 }
             }
         })
@@ -57,6 +57,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameLabel.text = passingName
+        horoscopeSignLable.text = "Aries"
         getHoroscope(for: "aries")
     }
     

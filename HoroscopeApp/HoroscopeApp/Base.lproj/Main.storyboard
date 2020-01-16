@@ -11,38 +11,43 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HoroscopeApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C18-ch-jc4">
-                                <rect key="frame" x="337" y="88" width="57" height="30"/>
-                                <state key="normal" title="Settings"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C18-ch-jc4">
+                                <rect key="frame" x="367" y="88" width="27" height="26"/>
+                                <state key="normal" image="gear" catalog="system">
+                                    <attributedString key="attributedTitle"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
                                 <connections>
                                     <action selector="settingsActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Fd-2l-waQ"/>
                                     <segue destination="aQ3-f8-Cdd" kind="show" id="E2j-DR-kPC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-qT-0mV">
-                                <rect key="frame" x="20" y="168" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="164" width="374" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <color key="highlightedColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vDY-8u-QMG">
-                                <rect key="frame" x="20" y="360" width="374" height="350"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your Horoscope For Today" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vDY-8u-QMG">
+                                <rect key="frame" x="20" y="356" width="374" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="8h3-Fx-6eM"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HoroscopeSighnLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5D-AC-dAr">
-                                <rect key="frame" x="20" y="239" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Horoscope" translatesAutoresizingMaskIntoConstraints="NO" id="fh7-O6-cVY">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunsign" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5D-AC-dAr">
+                                <rect key="frame" x="20" y="235" width="374" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -54,18 +59,22 @@
                             <constraint firstItem="vDY-8u-QMG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Cvf-6O-QEA"/>
                             <constraint firstItem="GTb-qT-0mV" firstAttribute="top" secondItem="C18-ch-jc4" secondAttribute="bottom" constant="50" id="Ff2-Hc-XZx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C18-ch-jc4" secondAttribute="trailing" constant="20" id="PgH-ZM-QMi"/>
+                            <constraint firstItem="fh7-O6-cVY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="R76-4H-eg8"/>
                             <constraint firstItem="C18-ch-jc4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tb2-3v-6Ei"/>
                             <constraint firstItem="vDY-8u-QMG" firstAttribute="top" secondItem="K5D-AC-dAr" secondAttribute="bottom" constant="100" id="bHT-lA-n8y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GTb-qT-0mV" secondAttribute="trailing" constant="20" id="dcd-6Y-5MV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K5D-AC-dAr" secondAttribute="trailing" constant="20" id="fl5-8R-ymH"/>
+                            <constraint firstItem="fh7-O6-cVY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hit-h0-jz9"/>
+                            <constraint firstItem="fh7-O6-cVY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="o04-fr-ErR"/>
                             <constraint firstItem="K5D-AC-dAr" firstAttribute="top" secondItem="GTb-qT-0mV" secondAttribute="bottom" constant="50" id="ob1-B8-8gO"/>
                             <constraint firstItem="GTb-qT-0mV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rt5-Bk-K7s"/>
+                            <constraint firstItem="fh7-O6-cVY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z4p-rI-ifV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="c1n-xp-naO"/>
                     <connections>
-                        <outlet property="horoscopeDescriptionLabel" destination="vDY-8u-QMG" id="J6E-5e-KgS"/>
+                        <outlet property="horoscopeDescriptionTextView" destination="vDY-8u-QMG" id="J6E-5e-KgS"/>
                         <outlet property="horoscopeSignLable" destination="K5D-AC-dAr" id="GsE-p5-e9x"/>
                         <outlet property="settingButtonLabel" destination="C18-ch-jc4" id="24i-Vs-ptl"/>
                         <outlet property="userNameLabel" destination="GTb-qT-0mV" id="YoY-1j-VRH"/>
@@ -200,4 +209,8 @@
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Horoscope" width="2600" height="1560"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
+    </resources>
 </document>
