@@ -29,18 +29,24 @@ class HoroscopeDetailViewController: UITableViewController {
         super.viewDidLoad()
         horoscopePicker.dataSource = self
         horoscopePicker.delegate = self
-       signName = horoscopes.first
+        signName = horoscopes.first
         
         nameTextField.delegate = self
     }
 
     // MARK: - Table view data source
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? ViewController else {
+            fatalError("could not unwind segue")
+        }
+        destinationVC.passingName = nameTextField.text ?? "no name"
+    }
 
     
     @IBAction func showHoroscopeActionButton(_ sender: UIButton) {
+        
     }
-    
-    
 }
 
 extension HoroscopeDetailViewController: UIPickerViewDataSource {

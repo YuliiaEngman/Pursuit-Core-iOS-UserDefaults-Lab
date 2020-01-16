@@ -15,10 +15,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var horoscopeSignLable: UILabel!
     @IBOutlet weak var horoscopeDescriptionLabel: UITextView!
     
+    var passingName = "" {
+        didSet{
+            DispatchQueue.main.async {
+                 self.userNameLabel.text = self.passingName
+            }
+        }
+    }
+    
     var horoscope: Horoscope? {
         didSet {
             DispatchQueue.main.async {
-                 
             }
         }
     }
@@ -26,9 +33,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        userNameLabel.text = passingName
     }
     
-    
+    @IBAction func unwindToVC1(_ sender: UIStoryboardSegue) {}
     
     @IBAction func settingsActionButton(_ sender: UIButton) {
     }

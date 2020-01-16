@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="anJ-Zv-Fmx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="anJ-Zv-Fmx">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,25 +12,25 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HoroscopeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C18-ch-jc4">
-                                <rect key="frame" x="337" y="0.0" width="57" height="30"/>
+                                <rect key="frame" x="337" y="88" width="57" height="30"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <action selector="settingsActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Fd-2l-waQ"/>
-                                    <segue destination="aQ3-f8-Cdd" kind="modal" id="T2K-A0-fFm"/>
+                                    <segue destination="aQ3-f8-Cdd" kind="show" id="E2j-DR-kPC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-qT-0mV">
-                                <rect key="frame" x="20" y="80" width="374" height="21"/>
+                                <rect key="frame" x="20" y="168" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vDY-8u-QMG">
-                                <rect key="frame" x="20" y="272" width="374" height="350"/>
+                                <rect key="frame" x="20" y="360" width="374" height="350"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="8h3-Fx-6eM"/>
@@ -41,7 +41,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HoroscopeSighnLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5D-AC-dAr">
-                                <rect key="frame" x="20" y="151" width="374" height="21"/>
+                                <rect key="frame" x="20" y="239" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
             <objects>
                 <tableViewController id="aQ3-f8-Cdd" customClass="HoroscopeDetailViewController" customModule="HoroscopeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6I7-Fo-Clt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HCq-iw-e7A">
@@ -89,7 +89,7 @@
                             <state key="normal" title="Show Your Horoscope"/>
                             <connections>
                                 <action selector="showHoroscopeActionButton:" destination="aQ3-f8-Cdd" eventType="touchUpInside" id="Mpl-LM-xuI"/>
-                                <segue destination="BYZ-38-t0r" kind="show" id="sSF-2K-fz1"/>
+                                <segue destination="3aQ-sh-4Si" kind="unwind" unwindAction="unwindToVC1:" id="LcF-NR-xIU"/>
                             </connections>
                         </button>
                         <sections>
@@ -168,6 +168,7 @@
                             <outlet property="delegate" destination="aQ3-f8-Cdd" id="j2z-qy-faZ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="XA9-Z8-P1N"/>
                     <connections>
                         <outlet property="datePicker" destination="AhB-qr-BS5" id="tSS-m5-veV"/>
                         <outlet property="horoscopeButtonLabel" destination="6I7-Fo-Clt" id="1Kz-NF-daS"/>
@@ -176,6 +177,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRm-zT-bD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3aQ-sh-4Si" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1902.8985507246377" y="115.84821428571428"/>
         </scene>
@@ -198,7 +200,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="sSF-2K-fz1"/>
-    </inferredMetricsTieBreakers>
 </document>
