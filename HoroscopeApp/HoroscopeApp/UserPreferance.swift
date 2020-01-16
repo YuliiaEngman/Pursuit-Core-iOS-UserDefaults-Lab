@@ -8,6 +8,7 @@
 
 import Foundation
 
+/*
 enum SportImage: String {
     case bike = "bike"
     case run = "run"
@@ -63,3 +64,4 @@ class UserPreference {
         return SportImage(rawValue: sportImage)
     }
 }
+*/

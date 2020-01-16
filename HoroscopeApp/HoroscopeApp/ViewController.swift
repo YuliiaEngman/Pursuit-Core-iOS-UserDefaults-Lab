@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     var horoscope: Horoscope? {
         didSet {
             DispatchQueue.main.async {
-                
+                 
             }
         }
     }

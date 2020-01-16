@@ -83,6 +83,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HCq-iw-e7A">
+                            <rect key="frame" x="0.0" y="668.5" width="414" height="93"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Show Your Horoscope"/>
+                        </button>
                         <sections>
                             <tableViewSection headerTitle="Section-1" id="JkO-sb-AiP">
                                 <cells>
@@ -111,22 +116,21 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Section-2" id="5Q1-RF-EQH">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="300" id="8Ad-cv-pxB">
-                                        <rect key="frame" x="0.0" y="127.5" width="414" height="300"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="239" id="8Ad-cv-pxB">
+                                        <rect key="frame" x="0.0" y="127.5" width="414" height="239"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Ad-cv-pxB" id="sdv-AA-siw">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cxE-II-6pC">
-                                                    <rect key="frame" x="0.0" y="8" width="414" height="284"/>
+                                                    <rect key="frame" x="0.0" y="8" width="414" height="216"/>
                                                 </pickerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="cxE-II-6pC" secondAttribute="bottom" constant="8" id="4Pm-6a-yl3"/>
-                                                <constraint firstItem="cxE-II-6pC" firstAttribute="top" secondItem="sdv-AA-siw" secondAttribute="top" constant="8" id="53P-Sy-cIu"/>
-                                                <constraint firstItem="cxE-II-6pC" firstAttribute="leading" secondItem="sdv-AA-siw" secondAttribute="leading" id="EEK-3Z-Xj4"/>
-                                                <constraint firstAttribute="trailing" secondItem="cxE-II-6pC" secondAttribute="trailing" id="gih-ID-uqY"/>
+                                                <constraint firstItem="cxE-II-6pC" firstAttribute="top" secondItem="sdv-AA-siw" secondAttribute="top" constant="8" id="12p-1Y-kvz"/>
+                                                <constraint firstItem="cxE-II-6pC" firstAttribute="leading" secondItem="sdv-AA-siw" secondAttribute="leading" id="rrd-Kw-ePh"/>
+                                                <constraint firstAttribute="trailing" secondItem="cxE-II-6pC" secondAttribute="trailing" id="yIl-W2-787"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -134,22 +138,21 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Section-3" id="dY8-vs-OHc">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="301" id="wN6-d7-lWd">
-                                        <rect key="frame" x="0.0" y="483.5" width="414" height="301"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="218" id="wN6-d7-lWd">
+                                        <rect key="frame" x="0.0" y="422.5" width="414" height="218"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wN6-d7-lWd" id="J1O-s9-fk1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="301"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="218"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="AhB-qr-BS5">
-                                                    <rect key="frame" x="0.0" y="8" width="414" height="285"/>
+                                                    <rect key="frame" x="0.0" y="8" width="414" height="216"/>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="AhB-qr-BS5" firstAttribute="leading" secondItem="J1O-s9-fk1" secondAttribute="leading" id="1bi-I6-aSc"/>
-                                                <constraint firstAttribute="bottom" secondItem="AhB-qr-BS5" secondAttribute="bottom" constant="8" id="LVH-cL-F30"/>
-                                                <constraint firstItem="AhB-qr-BS5" firstAttribute="top" secondItem="J1O-s9-fk1" secondAttribute="top" constant="8" id="Wqt-MF-2Lr"/>
-                                                <constraint firstAttribute="trailing" secondItem="AhB-qr-BS5" secondAttribute="trailing" id="ocd-g9-V2c"/>
+                                                <constraint firstItem="AhB-qr-BS5" firstAttribute="top" secondItem="J1O-s9-fk1" secondAttribute="top" constant="8" id="5aX-Lj-DsK"/>
+                                                <constraint firstAttribute="trailing" secondItem="AhB-qr-BS5" secondAttribute="trailing" id="Nvz-z7-6HH"/>
+                                                <constraint firstItem="AhB-qr-BS5" firstAttribute="leading" secondItem="J1O-s9-fk1" secondAttribute="leading" id="rjG-3l-eWX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -169,7 +172,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRm-zT-bD9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1903" y="116"/>
+            <point key="canvasLocation" x="1902.8985507246377" y="115.84821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YUW-DM-TrP">
