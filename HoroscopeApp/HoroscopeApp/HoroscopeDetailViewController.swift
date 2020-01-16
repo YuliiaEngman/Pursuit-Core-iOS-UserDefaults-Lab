@@ -16,6 +16,8 @@ class HoroscopeDetailViewController: UITableViewController {
     
     @IBOutlet var horoscopeButtonLabel: UITableView!
     
+    var chosenSign = ""
+    
     
     // data for our picker view - ask how we could populate in from API
     private let horoscopes = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
@@ -33,6 +35,8 @@ class HoroscopeDetailViewController: UITableViewController {
         
         nameTextField.delegate = self
     }
+    
+    
 
     // MARK: - Table view data source
     
@@ -41,8 +45,10 @@ class HoroscopeDetailViewController: UITableViewController {
             fatalError("could not unwind segue")
         }
         destinationVC.passingName = nameTextField.text ?? "no name"
+        destinationVC.passingSunsign = chosenSign
     }
 
+    
     
     @IBAction func showHoroscopeActionButton(_ sender: UIButton) {
         
@@ -63,6 +69,9 @@ extension HoroscopeDetailViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return horoscopes[row]
     }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        chosenSign = horoscopes[row]
+    }
 }
 
 extension HoroscopeDetailViewController: UITextFieldDelegate {
@@ -77,3 +86,8 @@ extension HoroscopeDetailViewController: UITextFieldDelegate {
         }
 }
 
+//@IBAction func datePickerChanged(sender: UIDatePicker) {
+//       
+//       // update date of event
+//      event?.date = sender.date
+//   }

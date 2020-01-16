@@ -23,12 +23,22 @@ class ViewController: UIViewController {
         }
     }
     
-    var horoscope: Horoscope? {
-        didSet {
-            DispatchQueue.main.async {
-            }
-        }
-    }
+//    var horoscope: Horoscope? {
+//        didSet {
+//            DispatchQueue.main.async {
+//   self.horoscopeSignLable.text = self.horoscope?.sunsign
+//   self.horoscopeDescriptionLabel.text = self.horoscope?.horoscope
+//            }
+//        }
+//    }
+    
+    var passingSunsign = "" {
+           didSet{
+               DispatchQueue.main.async {
+                self.horoscopeSignLable.text = self.passingSunsign
+               }
+           }
+       }
     
 
     override func viewDidLoad() {

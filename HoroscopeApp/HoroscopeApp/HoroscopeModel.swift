@@ -9,6 +9,6 @@
 import Foundation
 
 struct Horoscope: Decodable {
-    let sunsign: String
-    let horoscope: String
+    var sunsign: String
+    var horoscope: String
 }
