@@ -18,25 +18,27 @@ class HoroscopeDetailViewController: UITableViewController {
     
     var chosenSign = ""
     
+   // var horoscopeDescription = ""
+    
     
     // data for our picker view - ask how we could populate in from API
-    private let horoscopes = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
+    private let horoscopesSigns = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"]
+    
 
     // labName will be the current selected row in the picker view
     private var signName: String?
     
-    //var horoscope: Horoscope?
+    var horoscope: Horoscope?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         horoscopePicker.dataSource = self
         horoscopePicker.delegate = self
-        signName = horoscopes.first
+        signName = horoscopesSigns.first
+        
         
         nameTextField.delegate = self
     }
-    
-    
 
     // MARK: - Table view data source
     
@@ -46,9 +48,8 @@ class HoroscopeDetailViewController: UITableViewController {
         }
         destinationVC.passingName = nameTextField.text ?? "no name"
         destinationVC.passingSunsign = chosenSign
+        //destinationVC.passingSignDescription = horoscopeDescription
     }
-
-    
     
     @IBAction func showHoroscopeActionButton(_ sender: UIButton) {
         
@@ -61,16 +62,16 @@ extension HoroscopeDetailViewController: UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return horoscopes.count
+        return horoscopesSigns.count
     }
 }
 
 extension HoroscopeDetailViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return horoscopes[row]
+        return horoscopesSigns[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        chosenSign = horoscopes[row]
+        chosenSign = horoscopesSigns[row]
     }
 }
 
@@ -80,14 +81,8 @@ extension HoroscopeDetailViewController: UITextFieldDelegate {
            //dismiss the keyboard
            textField.resignFirstResponder()
            
-           // update name of event
-//           event?.name = textField.text ?? "no event name"
            return true // true or false does not affect
         }
 }
 
-//@IBAction func datePickerChanged(sender: UIDatePicker) {
-//       
-//       // update date of event
-//      event?.date = sender.date
-//   }
+

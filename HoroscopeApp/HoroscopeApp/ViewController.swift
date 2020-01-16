@@ -18,40 +18,57 @@ class ViewController: UIViewController {
     var passingName = "" {
         didSet{
             DispatchQueue.main.async {
-                 self.userNameLabel.text = self.passingName
+                self.userNameLabel.text = self.passingName
             }
         }
     }
     
-//    var horoscope: Horoscope? {
-//        didSet {
-//            DispatchQueue.main.async {
-//   self.horoscopeSignLable.text = self.horoscope?.sunsign
-//   self.horoscopeDescriptionLabel.text = self.horoscope?.horoscope
-//            }
-//        }
-//    }
-    
     var passingSunsign = "" {
-           didSet{
-               DispatchQueue.main.async {
+        didSet{
+            DispatchQueue.main.async {
                 self.horoscopeSignLable.text = self.passingSunsign
-               }
-           }
-       }
+                self.getHoroscope(for: self.passingSunsign)
+            }
+        }
+    }
     
-
+    var passingSignDescription = "" {
+        didSet{
+            DispatchQueue.main.async {
+                self.horoscopeDescriptionLabel.text = self.passingSignDescription
+            }
+        }
+    }
+    
+    private func getHoroscope(for sign: String) {
+        HoroscopeAPIClient.fetchHoroscope(for: sign.lowercased(), completion: { [weak self] (result) in
+            switch result {
+            case .failure(let appError):
+                print("error \(appError)")
+            case .success(let gotHoroscope):
+                DispatchQueue.main.async {
+                    self?.horoscopeDescriptionLabel.text = gotHoroscope.horoscope
+                }
+            }
+        })
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userNameLabel.text = passingName
+        getHoroscope(for: "aries")
     }
     
-    @IBAction func unwindToVC1(_ sender: UIStoryboardSegue) {}
+    @IBAction func unwindToVC1(_ sender: UIStoryboardSegue) {
+        
+        
+    }
     
     @IBAction func settingsActionButton(_ sender: UIButton) {
     }
     
-
-
+    
+    
 }
 
