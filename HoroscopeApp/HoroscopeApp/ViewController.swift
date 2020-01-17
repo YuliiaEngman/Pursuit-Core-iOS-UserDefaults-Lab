@@ -61,15 +61,33 @@ class ViewController: UIViewController {
         getHoroscope(for: "aries")
     }
     
-    @IBAction func unwindToVC1(_ sender: UIStoryboardSegue) {
-        
-        
-    }
+//    @IBAction func unwindToVC1(_ sender: UIStoryboardSegue) {
+//        guard let detailVC = segue.source as? HoroscopeDetailViewController, let sign = deta
+//        
+//    }
     
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue){}
+    
+     
     @IBAction func settingsActionButton(_ sender: UIButton) {
     }
-    
-    
-    
 }
+
+//@IBAction func addNewEvent(segue: UIStoryboardSegue) {
+//    // caveman debugging  print("adding event....")
+//    guard let createEventController = segue.source as? CreateEventController,
+//        let createdEvent = createEventController.event else {
+//        fatalError("failed to access CreateEventController")
+//    }
+//    // insert into our events array
+//    // 1. update the data model e.g. update the evnts array
+//    events.insert(createdEvent, at: 0) // implies top of the events array
+//
+//    // create an indexPathto be inserted into the tableView
+//    let indexPath = IndexPath(row: 0, section: 0) // will represent top of table view
+//
+//    // 2. we need to update the table view
+//    // use indexPath to inser into tble view
+//    tableView.insertRows(at: [indexPath], with: .automatic)
+//}
 
